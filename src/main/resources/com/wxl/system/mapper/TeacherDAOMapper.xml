@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxl.system.dao.TeacherDAO">
+    <!--录入教师档案信息-->
+    <insert id="insertTeacher" parameterType="Teacher" useGeneratedKeys="true" keyProperty="tno">
+        insert into teacher_tb
+        values (#{tno},#{tname},#{sex},#{worktime},#{pol},#{edurecord},#{position},#{dept},#{tel});
+    </insert>
+
+    <select id="findByTno" resultType="Teacher">
+        select * from teacher_tb where tno = #{tno}
+    </select>
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxl.system.dao.StudentDAO">
+    <!--录入学生档案信息-->
+    <insert id="insertStudent" parameterType="Student" useGeneratedKeys="true" keyProperty="sno">
+        insert into student_tb
+        values (#{sno},#{sname},#{sex},#{birth},#{gs},#{pol},#{classno},#{major},#{dept});
+    </insert>
+
+    <select id="findBySno" resultType="Student">
+        select * from student_tb where sno = #{sno}
+    </select>
+</mapper>
