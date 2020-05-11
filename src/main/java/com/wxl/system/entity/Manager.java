@@ -21,4 +21,5 @@ public class Manager {
     private int msex;
     private String mname;
     private String mno;
+    private String change;
 }
